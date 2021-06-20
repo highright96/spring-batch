@@ -1,9 +1,12 @@
 package dev.highright96.springbatch.part3;
 
+import static io.micrometer.core.instrument.util.StringUtils.isNotEmpty;
+
+import java.util.ArrayList;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -20,12 +23,6 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.StringUtils;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static io.micrometer.core.instrument.util.StringUtils.isNotEmpty;
 
 @Configuration
 @Slf4j
