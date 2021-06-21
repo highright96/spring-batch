@@ -1,5 +1,6 @@
 package dev.highright96.springbatch.part3;
 
+import java.util.Objects;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 public class Person {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,5 +30,9 @@ public class Person {
 
     public Person(String name, String age, String address) {
         this(0, name, age, address);
+    }
+
+    public boolean isNotEmptyName() {
+        return Objects.nonNull(this.name) && !name.isEmpty();
     }
 }
